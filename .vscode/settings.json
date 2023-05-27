@@ -1,0 +1,12 @@
+{
+    "editor.rulers": [
+        100
+    ],
+    "editor.snippetSuggestions": "top",
+    "C_Cpp.clang_format_style": "{ BasedOnStyle: LLVM, IndentWidth: 4, ColumnLimit: 100 }",
+    "C_Cpp.suggestSnippets": false,
+    "C_Cpp.autocompleteAddParentheses": true,
+    "files.associations": {
+        "modint": "cpp"
+    }
+}

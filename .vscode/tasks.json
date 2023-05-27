@@ -1,0 +1,95 @@
+{
+    "tasks": [
+        {
+            "label": "run",
+            "type": "shell",
+            "command": "${fileDirname}/build/${fileBasenameNoExtension}",
+            "dependsOn": [
+                "build"
+            ],
+            "presentation": {
+                "clear": true,
+                "focus": true
+            }
+        },
+        {
+            "label": "run test case",
+            "type": "shell",
+            "command": "${workspaceFolder}/.script/run_test_case.sh",
+            "args": [
+                "${relativeFile}"
+            ],
+            "dependsOn": [
+                "build"
+            ],
+            "presentation": {
+                "clear": true
+            }
+        },
+        {
+            "label": "add test case",
+            "type": "shell",
+            "command": "${workspaceFolder}/.script/add_test_case.sh",
+            "args": [
+                "${relativeFile}"
+            ]
+        },
+        {
+            "label": "build",
+            "type": "shell",
+            "command": "/usr/local/bin/g++",
+            "args": [
+                "${file}",
+                "-std=c++17",
+                "-g",
+                "-gdwarf-4",
+                "-fdiagnostics-color=always",
+                "-o",
+                "${fileDirname}/build/${fileBasenameNoExtension}"
+            ],
+            "dependsOn": [
+                "mkdir build"
+            ]
+        },
+        {
+            "label": "debug build",
+            "type": "shell",
+            "command": "/usr/local/bin/g++",
+            "args": [
+                "${file}",
+                "-std=c++17",
+                "-g",
+                "-gdwarf-4",
+                "-fdiagnostics-color=always",
+                "-o",
+                "${fileDirname}/build/${fileBasenameNoExtension}",
+                "-DDEBUG"
+            ],
+            "dependsOn": [
+                "mkdir build"
+            ]
+        },
+        {
+            "label": "mkdir build",
+            "type": "shell",
+            "command": "mkdir -p ${fileDirname}/build"
+        },
+        {
+            "label": "clean build",
+            "type": "shell",
+            "command": "find . -name build | xargs rm -rf"
+        },
+        {
+            "label": "add cpp file",
+            "type": "shell",
+            "command": "${workspaceFolder}/.script/add_cpp_file.sh",
+            "args": [
+                "${workspaceFolder}"
+            ],
+            "presentation": {
+                "focus": true
+            }
+        },
+    ],
+    "version": "2.0.0"
+}

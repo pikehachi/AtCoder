@@ -1,0 +1,674 @@
+{
+    "main": {
+        "prefix": "main",
+        "body": [
+            "#include <bits/stdc++.h>",
+            "using namespace std;",
+            "",
+            "// clang-format off",
+            "struct Fast {Fast() {std::cin.tie(0); ios::sync_with_stdio(false);}} fast;",
+            "// clang-format on",
+            "#define int long long",
+            "",
+            "signed main() {",
+            "    $0",
+            "}",
+            "",
+        ]
+    },
+    "ci": {
+        "prefix": "ci",
+        "body": [
+            "${1:type} ${2:in};",
+            "cin >> $2;",
+        ]
+    },
+    "ci2": {
+        "prefix": "ci2",
+        "body": [
+            "${1:type} ${2:in1}, ${3:in2};",
+            "cin >> $2 >> $3;",
+        ]
+    },
+    "ci3": {
+        "prefix": "ci3",
+        "body": [
+            "${1:type} ${2:in1}, ${3:in2}, ${4:in3};",
+            "cin >> $2 >> $3 >> $4;",
+        ]
+    },
+    "ci4": {
+        "prefix": "ci4",
+        "body": [
+            "${1:type} ${2:in1}, ${3:in2}, ${4:in3}, ${5:in4};",
+            "cin >> $2 >> $3 >> $4 >> $5;",
+        ]
+    },
+    "ci5": {
+        "prefix": "ci5",
+        "body": [
+            "${1:type} ${2:in1}, ${3:in2}, ${4:in3}, ${5:in4}, ${6:in5};",
+            "cin >> $2 >> $3 >> $4 >> $5 >> $6;",
+        ]
+    },
+    "civec": {
+        "prefix": "civec",
+        "body": [
+            "vector<${1:type}> ${2:vec}(${3:size});",
+            "for (auto &&in : $2) {",
+            "    cin >> in;",
+            "}",
+        ]
+    },
+    "civec2": {
+        "prefix": "civec2",
+        "body": [
+            "vector<vector<${1:type}>> ${2:vec}(${3:size1}, vector<$1>(${4:size2}));",
+            "for (auto &&row : $2) {",
+            "    for (auto &&in : row) {",
+            "        cin >> in;",
+            "    }",
+            "}",
+        ]
+    },
+    "co": {
+        "prefix": "co",
+        "body": [
+            "cout << ${1:out} << '\\n';",
+        ]
+    },
+    "co2": {
+        "prefix": "co2",
+        "body": [
+            "cout << ${1:out1} << ${2:out2} << '\\n';",
+        ]
+    },
+    "co3": {
+        "prefix": "co3",
+        "body": [
+            "cout << ${1:out1} << ${2:out2} << ${3:out3} << '\\n';",
+        ]
+    },
+    "co4": {
+        "prefix": "co4",
+        "body": [
+            "cout << ${1:out1} << ${2:out2} << ${3:out3} << ${4:out4} << '\\n';",
+        ]
+    },
+    "co5": {
+        "prefix": "co5",
+        "body": [
+            "cout << ${1:out1} << ${2:out2} << ${3:out3} << ${4:out4} << ${5:out5} << '\\n';",
+        ]
+    },
+    "covec": {
+        "prefix": "covec",
+        "body": [
+            "for (auto out = ${1:vec}.begin(); out != $1.end(); out++) {",
+            "    cout << ${2:*out} << (out != --$1.end() ? ' ' : '\\n');",
+            "}",
+        ]
+    },
+    "covec2": {
+        "prefix": "covec2",
+        "body": [
+            "for (auto &&row : ${1:vec}) {",
+            "    for (auto out = row.begin(); out != row.end(); out++) {",
+            "        cout << ${2:*out} << (out != --row.end() ? ' ' : '\\n');",
+            "    }",
+            "}",
+        ]
+    },
+    "coyesno": {
+        "prefix": "coyesno",
+        "body": [
+            "cout << (${1:condition} ? ${2|\"Yes\" : \"No\",\"YES\" : \"NO\",\"yes\" : \"no\"|}) << '\\n';",
+        ]
+    },
+    "coaccuracy": {
+        "prefix": "coaccuracy",
+        "body": [
+            "cout << fixed << setprecision(${1:12});",
+        ]
+    },
+    "cobool": {
+        "prefix": "cobool",
+        "body": [
+            "cout << boolalpha;",
+        ]
+    },
+    "copad": {
+        "prefix": "copad",
+        "body": [
+            "cout << setfill('0') << setw(${1:length}) << ${2:out} << '\\n';",
+        ]
+    },
+    "coflush": {
+        "prefix": "coflush",
+        "body": [
+            "cout << flush;",
+        ]
+    },
+    "ll": {
+        "prefix": "ll",
+        "body": [
+            "long long",
+        ]
+    },
+    "vec": {
+        "prefix": "vec",
+        "body": [
+            "vector<${1:type}>",
+        ]
+    },
+    "vec2": {
+        "prefix": "vec2",
+        "body": [
+            "vector<vector<${1:type}>>",
+        ]
+    },
+    "vec3": {
+        "prefix": "vec3",
+        "body": [
+            "vector<vector<vector<${1:type}>>>",
+        ]
+    },
+    "set": {
+        "prefix": "set",
+        "body": [
+            "set<${1:type}>",
+        ]
+    },
+    "uset": {
+        "prefix": "uset",
+        "body": [
+            "unordered_set<${1:type}>",
+        ]
+    },
+    "usetcustom": {
+        "prefix": "usetcustom",
+        "body": [
+            "unordered_set<${1:type}, $1::Hash>",
+        ]
+    },
+    "map": {
+        "prefix": "map",
+        "body": [
+            "map<${1:type1}, ${2:type2}>",
+        ]
+    },
+    "umap": {
+        "prefix": "umap",
+        "body": [
+            "unordered_map<${1:type1}, ${2:type2}>",
+        ]
+    },
+    "umapcustom": {
+        "prefix": "umapcustom",
+        "body": [
+            "unordered_map<${1:type1}, ${2:type2}, $1::Hash>",
+        ]
+    },
+    "pq": {
+        "prefix": "pq",
+        "body": [
+            "priority_queue<${1:type}>",
+        ]
+    },
+    "pqreverse": {
+        "prefix": "pqreverse",
+        "body": [
+            "priority_queue<${1:type}, vector<$1>, greater<$1>>",
+        ]
+    },
+    "vecsized": {
+        "prefix": "vecsized",
+        "body": [
+            "vector<${1:type}> ${2:name}(${3:size});",
+        ]
+    },
+    "vec2sized": {
+        "prefix": "vec2sized",
+        "body": [
+            "vector<vector<${1:type}>> ${2:name}(${3:size1}, vector<$1>(${4:size2}));",
+        ]
+    },
+    "vec3sized": {
+        "prefix": "vec3sized",
+        "body": [
+            "vector<vector<vector<${1:type}>>> ${2:name}(${3:size1}, vector<vector<$1>>(${4:size2}, vector<$1>(${5:size3})));",
+        ]
+    },
+    "pqlambda": {
+        "prefix": "pqlambda",
+        "body": [
+            "priority_queue<${1:type}, vector<$1>, function<bool($1, $1)>> ${2:name}([&]($1 ${3:value1}, $1 ${4:value2}) { $0 });",
+        ]
+    },
+    "struct2": {
+        "prefix": "struct2",
+        "body": [
+            "template <class Type> inline void hash_combine(size_t &h, const Type &value) noexcept {",
+            "    size_t k = hash<Type>{}(value);",
+            "    uint64_t m = 0xc6a4a7935bd1e995;",
+            "    int r = 47;",
+            "    k *= m;",
+            "    k ^= k >> r;",
+            "    k *= m;",
+            "    h ^= k;",
+            "    h *= m;",
+            "    h += 0xe6546b64;",
+            "}",
+            "",
+            "struct ${1:name} {",
+            "    ${2:type1} ${3:value1};",
+            "    ${4:type2} ${5:value2};",
+            "",
+            "    string to_string() const {",
+            "        ostringstream oss;",
+            "        oss << \"$1($3=\" << $3 << \", $5=\" << $5 << \")\";",
+            "        return oss.str();",
+            "    }",
+            "",
+            "    bool operator==(const $1 &other) const {",
+            "        return tie($3, $5) == tie(other.$3, other.$5);",
+            "    }",
+            "",
+            "    bool operator<(const $1 &other) const {",
+            "        return make_pair($3, $5) < make_pair(other.$3, other.$5);",
+            "    }",
+            "",
+            "    struct Hash {",
+            "        size_t operator()(const $1 &p) const noexcept {",
+            "            size_t seed = 0;",
+            "            hash_combine(seed, p.$3);",
+            "            hash_combine(seed, p.$5);",
+            "            return seed;",
+            "        }",
+            "    };",
+            "};",
+        ]
+    },
+    "struct3": {
+        "prefix": "struct3",
+        "body": [
+            "template <class Type> inline void hash_combine(size_t &h, const Type &value) noexcept {",
+            "    size_t k = hash<Type>{}(value);",
+            "    uint64_t m = 0xc6a4a7935bd1e995;",
+            "    int r = 47;",
+            "    k *= m;",
+            "    k ^= k >> r;",
+            "    k *= m;",
+            "    h ^= k;",
+            "    h *= m;",
+            "    h += 0xe6546b64;",
+            "}",
+            "",
+            "struct ${1:name} {",
+            "    ${2:type1} ${3:value1};",
+            "    ${4:type2} ${5:value2};",
+            "    ${6:type2} ${7:value3};",
+            "",
+            "    string to_string() const {",
+            "        ostringstream oss;",
+            "        oss << \"$1($3=\" << $3 << \", $5=\" << $5 << \", $7=\" << $7 << \")\";",
+            "        return oss.str();",
+            "    }",
+            "",
+            "    bool operator==(const $1 &other) const {",
+            "        return tie($3, $5, $7) == tie(other.$3, other.$5, other.$7);",
+            "    }",
+            "",
+            "    bool operator<(const $1 &other) const {",
+            "        return make_tuple($3, $5, $7) < make_tuple(other.$3, other.$5, other.$7);",
+            "    }",
+            "",
+            "    struct Hash {",
+            "        size_t operator()(const $1 &p) const noexcept {",
+            "            size_t seed = 0;",
+            "            hash_combine(seed, p.$3);",
+            "            hash_combine(seed, p.$5);",
+            "            hash_combine(seed, p.$7);",
+            "            return seed;",
+            "        }",
+            "    };",
+            "};",
+        ]
+    },
+    "infi": {
+        "prefix": "infi",
+        "body": [
+            "const int INF = 1e9;",
+        ]
+    },
+    "infll": {
+        "prefix": "infll",
+        "body": [
+            "const long long INF = 1e18;",
+        ]
+    },
+    "dxdy": {
+        "prefix": "dxdy",
+        "body": [
+            "const vector<int> DX = {1, 0, -1, 0};",
+            "const vector<int> DY = {0, 1, 0, -1};",
+        ]
+    },
+    "drowdcol": {
+        "prefix": "drowdcol",
+        "body": [
+            "const vector<int> DROW = {1, 0, -1, 0};",
+            "const vector<int> DCOL = {0, 1, 0, -1};",
+        ]
+    },
+    "for": {
+        "prefix": "for",
+        "body": [
+            "for (int ${1:i} = ${2:0}; $1 < ${3:count}; $1++) {",
+            "    $0",
+            "}",
+        ]
+    },
+    "forreverse": {
+        "prefix": "forreverse",
+        "body": [
+            "for (int ${1:i} = ${2:count} - 1; $1 >= 0; $1--) {",
+            "    $0",
+            "}",
+        ]
+    },
+    "forrange": {
+        "prefix": "forrange",
+        "body": [
+            "for (auto &&${1:element} : ${2:vec}) {",
+            "    $0",
+            "}",
+        ]
+    },
+    "lf": {
+        "prefix": "lf",
+        "body": [
+            "'\\n'",
+        ]
+    },
+    "lforspace": {
+        "prefix": "lforspace",
+        "body": [
+            "(${1:condition} ? ' ' : '\\n')",
+        ]
+    },
+    "all": {
+        "prefix": "all",
+        "body": [
+            "${1:vec}.begin(), $1.end()",
+        ]
+    },
+    "allreverse": {
+        "prefix": "allreverse",
+        "body": [
+            "${1:vec}.rbegin(), $1.rend()",
+        ]
+    },
+    "chmax": {
+        "prefix": "chmax",
+        "body": [
+            "${1:max} = max($1, ${2:target});",
+        ]
+    },
+    "chmin": {
+        "prefix": "chmin",
+        "body": [
+            "${1:min} = min($1, ${2:target});",
+        ]
+    },
+    "rangeexclusive": {
+        "prefix": "rangeexclusive",
+        "body": [
+            "${1:min} <= ${2:value} && $2 < ${3:max}",
+        ]
+    },
+    "rangeinclusive": {
+        "prefix": "rangeinclusive",
+        "body": [
+            "${1:min} <= ${2:value} && $2 <= ${3:max}",
+        ]
+    },
+    "mmseterase": {
+        "prefix": "mmseterase",
+        "body": [
+            "${1:multiset}.erase($1.find(${2:value}));",
+        ]
+    },
+    "popcount": {
+        "prefix": "popcount",
+        "body": [
+            "__builtin_popcount(${1:value})",
+        ]
+    },
+    "lambda": {
+        "prefix": "lambda",
+        "body": [
+            "[&](${1:auto} const &${2:value}) { $0 }",
+        ]
+    },
+    "lambda2": {
+        "prefix": "lambda2",
+        "body": [
+            "[&](${1:auto} const &${2:value1}, ${3:auto} const &${4:value2}) { $0 }",
+        ]
+    },
+    "fun": {
+        "prefix": "fun",
+        "body": [
+            "function<${1:ret}(${2:type})> ${3:name} = [&]($2 ${4:value}) {",
+            "    $0",
+            "};",
+        ]
+    },
+    "fun2": {
+        "prefix": "fun2",
+        "body": [
+            "function<${1:ret}(${2:type1}, ${3:type2})> ${4:name} = [&]($2 ${5:value1}, $3 ${6:value2}) {",
+            "    $0",
+            "};",
+        ]
+    },
+    "filter": {
+        "prefix": "filter",
+        "body": [
+            "vector<${1:type}> ${2:filtered};",
+            "copy_if(${3:vec}.begin(), $3.end(), back_inserter($2), [&]($1 const &value) { $0 });",
+        ]
+    },
+    "transform": {
+        "prefix": "transform",
+        "body": [
+            "vector<${1:type}> ${2:transformed};",
+            "transform(${3:vec}.begin(), $3.end(), back_inserter($2), [&](${4:auto} const &value) { $0 });",
+        ]
+    },
+    "partialsum": {
+        "prefix": "partialsum",
+        "body": [
+            "vector<${1:type}> ${2:sums} = {0};",
+            "partial_sum(${3:vec}.begin(), ${3:vec}.end(), back_insert_iterator($2));",
+        ]
+    },
+    "binarysearch": {
+        "prefix": "binarysearch",
+        "body": [
+            "auto isOk = [&](${1:type} mid) {",
+            "    $0",
+            "};",
+            "$1 ok = ${2:okBound};",
+            "$1 ng = ${3:ngBound};",
+            "while (abs(ok - ng) > 1) {",
+            "    $1 mid = (ok + ng) / 2;",
+            "    if (isOk(mid)) {",
+            "        ok = mid;",
+            "    } else {",
+            "        ng = mid;",
+            "    }",
+            "}",
+        ]
+    },
+    "itos": {
+        "prefix": "itos",
+        "body": [
+            "string itos(long long value, int radix) {",
+            "    if (value == 0) {",
+            "        return \"0\";",
+            "    }",
+            "    string res;",
+            "    bool isNegative = value < 0;",
+            "    value = abs(value);",
+            "    while (value > 0) {",
+            "        int r = value % radix;",
+            "        char c = r <= 9 ? r + '0' : r - 10 + 'a';",
+            "        res = c + res;",
+            "        value /= radix;",
+            "    }",
+            "    if (isNegative) {",
+            "        res = '-' + res;",
+            "    }",
+            "    return res;",
+            "}",
+        ]
+    },
+    "powll": {
+        "prefix": "powll",
+        "body": [
+            "long long powll(long long base, long long exponent) {",
+            "    long long ret = 1;",
+            "    long long remain = exponent;",
+            "    while (remain > 0) {",
+            "        if (remain % 2 == 1) {",
+            "            ret *= base;",
+            "        }",
+            "        base *= base;",
+            "        remain /= 2;",
+            "    }",
+            "    return ret;",
+            "}",
+        ]
+    },
+    "prime": {
+        "prefix": "prime",
+        "body": [
+            "bool is_prime(long long n) {",
+            "    if (n == 1) {",
+            "        return false;",
+            "    }",
+            "    for (long long i = 2; i * i <= n; i++) {",
+            "        if (n % i == 0) {",
+            "            return false;",
+            "        }",
+            "    }",
+            "    return true;",
+            "}",
+        ]
+    },
+    "primefact": {
+        "prefix": "primefact",
+        "body": [
+            "vector<long long> get_prime_factorization(long long n) {",
+            "    vector<long long> ret;",
+            "    long long remain = n;",
+            "    for (long long i = 2; i * i <= remain; i++) {",
+            "        while (remain % i == 0) {",
+            "            ret.push_back(i);",
+            "            remain /= i;",
+            "        }",
+            "    }",
+            "    if (remain != 1) {",
+            "        ret.push_back(remain);",
+            "    }",
+            "    return ret;",
+            "}",
+        ]
+    },
+    "permutation": {
+        "prefix": "permutation",
+        "body": [
+            "void foreach_permutation(vector<${1:type}> list, function<void(vector<${1:type}>)> callback) {",
+            "    vector<${1:type}> permutation(list.size());",
+            "    vector<int> indexes(list.size());",
+            "    iota(indexes.begin(), indexes.end(), 0);",
+            "    do {",
+            "        for (int i = 0; i < indexes.size(); i++) {",
+            "            permutation[i,] = list[indexes[i,],];",
+            "        }",
+            "        callback(permutation);",
+            "    } while (next_permutation(indexes.begin(), indexes.end()));",
+            "}",
+        ]
+    },
+    "permutation2": {
+        "prefix": "permutation2",
+        "body": [
+            "void foreach_permutation(vector<${1:type}> list, int count, function<void(vector<${1:type}>)> callback) {",
+            "    vector<${1:type}> permutation(count);",
+            "    vector<${1:type}> combination(count);",
+            "    vector<int> indexes(count);",
+            "    iota(indexes.begin(), indexes.end(), 0);",
+            "    function<void(int, int)> dfs = [&](int position, int index) {",
+            "        if (position == count) {",
+            "            do {",
+            "                for (int i = 0; i < indexes.size(); i++) {",
+            "                    permutation[i,] = combination[indexes[i,],];",
+            "                }",
+            "                callback(permutation);",
+            "            } while (next_permutation(indexes.begin(), indexes.end()));",
+            "            return;",
+            "        }",
+            "        for (int i = index; i < list.size(); i++) {",
+            "            combination[position,] = list[i,];",
+            "            dfs(position + 1, i + 1);",
+            "        }",
+            "    };",
+            "    dfs(0, 0);",
+            "}",
+        ]
+    },
+    "combination": {
+        "prefix": "combination",
+        "body": [
+            "void foreach_combination(vector<${1:type}> list, int count, function<void(vector<${1:type}>)> callback) {",
+            "    vector<${1:type}> combination(count);",
+            "    function<void(int, int)> dfs = [&](int position, int index) {",
+            "        if (position == count) {",
+            "            callback(combination);",
+            "            return;",
+            "        }",
+            "        for (int i = index; i < list.size(); i++) {",
+            "            combination[position,] = list[i,];",
+            "            dfs(position + 1, i + 1);",
+            "        }",
+            "    };",
+            "    dfs(0, 0);",
+            "}",
+        ]
+    },
+    "debugsetmap": {
+        "prefix": "debugsetmap",
+        "body": [
+            "#ifdef DEBUG",
+            "#define unordered_set set",
+            "#define unordered_map map",
+            "#endif",
+        ]
+    },
+    "acl": {
+        "prefix": "acl",
+        "body": [
+            "#include <atcoder/${1|fenwicktree,segtree,lazysegtree,string,math,convolution,modint,dsu,maxflow,mincostflow,scc,twosat|}>",
+            "using namespace atcoder;",
+        ]
+    },
+    "mint": {
+        "prefix": "mint",
+        "body": [
+            "using mint = modint$0;",
+        ]
+    },
+}
